@@ -27,7 +27,7 @@ export default function OAth() {
             
             const data = await response.json();
             dispatch(signInSuccess(data));
-            navigate('/')
+            navigate('/');
         } catch (error) {
             console.log('could not sign in with google', error)
         }
