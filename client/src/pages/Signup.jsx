@@ -63,6 +63,7 @@ const Signup = () => {
         <input type="password" placeholder='Password' className='border p-3 rounded-lg' id="password" onChange={handleChange} />
       
         <button className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:80' onChange={handleChange}  disabled={isLoading}>{isLoading ? 'Loading...' : 'Sign Up'}</button>
+        <OAth />
       </form>
 
       <div className="flex gap-2 mt-5">

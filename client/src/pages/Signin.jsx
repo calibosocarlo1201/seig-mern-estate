@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import {Link, useNavigate} from 'react-router-dom'
 import { signInStart, signInSuccess, signInFailure } from '../redux/user/userSlice';
+import OAth from '../components/OAth';
 
 const SignIn = () => {
 
@@ -60,6 +61,7 @@ const SignIn = () => {
         <input type="password" placeholder='Password' className='border p-3 rounded-lg' id="password" onChange={handleChange} />
       
         <button className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:80' onChange={handleChange}  disabled={loading}>{loading ? 'Loading...' : 'Sign Up'}</button>
+        <OAth />
       </form>
 
       <div className="flex gap-2 mt-5">
