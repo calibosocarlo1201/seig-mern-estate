@@ -34,3 +34,16 @@ export const updateUser = async (req, res, next) => {
         next(error);
     }
 }
+
+export const deleteUser = async (req, res, next) => {
+    const id = req.params.id;
+
+    if(req.user.id !== req.params.id) return next(errorHandler(403, 'Unautorized! You can only delete your own account')); 
+
+    const deletedUser = await User.deleteOne({_id: id});
+
+    if(deletedUser.deletedCount > 0){
+        res.clearCookie('access_token');
+        res.status(200).json({message: "Your account was successfully deleted!"})
+    }
+}
